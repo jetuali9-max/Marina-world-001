@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f8dce9">
+<meta name="description" content="Discover the Marina World handbag collection — lovely colors and elegant everyday style.">
+<title>Marina World | Handbag Collection</title>
+<style>
+:root{--pink:#e83e8c;--pink2:#ff78b6;--dark:#92104f;--ink:#442436;--muted:#8a6a7b;--glass:rgba(255,255,255,.58);--line:rgba(255,255,255,.92);--green:#b8f5cd;--shadow:0 18px 48px rgba(147,35,88,.13);--radius:25px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{margin:0;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(ellipse at 10% 4%,#fff 0,transparent 31%),radial-gradient(ellipse at 92% 15%,rgba(255,117,179,.27),transparent 34%),radial-gradient(ellipse at 6% 70%,rgba(244,170,205,.3),transparent 30%),linear-gradient(135deg,#fff8fc,#fbe6f0 48%,#fff1f7);background-attachment:fixed;min-height:100vh}
+button,input,select{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+button{cursor:pointer}
+a{color:inherit}
+.glass{background:linear-gradient(135deg,rgba(255,255,255,.76),rgba(255,255,255,.35) 55%,rgba(255,235,245,.48));border:1px solid var(--line);box-shadow:var(--shadow),inset 0 1px 0 #fff;backdrop-filter:blur(22px) saturate(150%);-webkit-backdrop-filter:blur(22px) saturate(150%)}
+.topbar{position:sticky;top:0;z-index:20;padding:calc(7px + env(safe-area-inset-top)) 4% 10px}
+.country-strip{max-width:1200px;margin:0 auto 8px;text-align:center;padding:8px 12px;border:1px solid #fff;border-radius:14px;background:linear-gradient(100deg,#fffdfdce,#f6dce9e8,#fffdfdce);box-shadow:0 5px 18px #8f124d10;color:#74344f;font-size:.76rem;font-weight:850;letter-spacing:.025em}
+.country-strip strong{color:#a20e54}
+.language-btn{min-width:54px;padding:0 9px;font-size:.76rem;font-weight:950}
+.price-old{display:block;font-size:.72rem;color:#a58a98;text-decoration:line-through;font-weight:700;margin-top:2px}
+.price-now{display:block}
+.price-note{text-align:center;font-size:.72rem;color:#96798a;margin:5px 0 14px}
+@media(max-width:520px){.language-btn{min-width:43px;padding:0 4px;font-size:.65rem}.country-strip{font-size:.69rem;padding:7px 8px}}
+.stock-pill,.tag-pill{display:inline-flex;align-items:center;gap:5px;padding:5px 8px;border-radius:99px;font-size:.68rem;font-weight:900;line-height:1.2;border:1px solid #fff;white-space:nowrap}
+.stock-pill{background:#fff4d9;color:#805b12}.stock-pill.available{background:#e0f8e8;color:#17663c}.stock-pill.sold{background:#ffe3eb;color:#a20e54}
+.tag-row{display:flex;gap:5px;flex-wrap:wrap;margin:0 0 9px}.tag-pill.new{background:#fce0ed;color:#a20e54}.tag-pill.sale{background:#ffe8bd;color:#85520a}
+.review-box{margin-top:12px;padding:12px;border-radius:15px;background:#fff8fc;border:1px solid #f1d9e5}.review-box strong{display:block;margin-bottom:4px}.review-box p{margin:0 0 8px;font-size:.84rem;line-height:1.5;color:#806474}.review-btn{border:1px solid #fff;border-radius:11px;background:#fff;color:#8b1d53;padding:9px 12px;font-weight:850;box-shadow:0 4px 12px #8f124d12;transition:transform .2s,box-shadow .2s}.review-btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px #8f124d20}
+button:active,.btn:active,.filter:active{transform:scale(.97)}
+button:focus-visible,a:focus-visible,[role=button]:focus-visible{outline:3px solid #e83e8c88;outline-offset:3px}
+.nav{max-width:1200px;margin:auto;display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:20px;background:rgba(255,255,255,.72);box-shadow:0 10px 32px rgba(141,29,78,.13),inset 0 1px 0 #fff}
+.brand{display:flex;align-items:center;gap:8px;margin-right:auto;text-decoration:none;font-size:.9rem;font-weight:950;letter-spacing:.055em;color:var(--dark);white-space:nowrap}
+.brand-mark{display:grid;place-items:center;width:31px;height:31px;border-radius:11px;background:linear-gradient(145deg,#ffacd0,#d81769);color:#fff;box-shadow:0 5px 14px #b8115940}
+.nav-actions{display:flex;align-items:center;gap:7px}
+.icon-btn,.menu-btn{position:relative;display:grid;place-items:center;min-width:42px;height:42px;border:1px solid #fff;border-radius:14px;background:rgba(255,255,255,.82);color:var(--dark);box-shadow:0 5px 16px #8f124d12;transition:transform .2s,box-shadow .2s}
+.icon-btn:hover,.menu-btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px #8f124d22}
+.menu-btn{background:linear-gradient(145deg,#ff72b2,#d81769 58%,#a90d51);color:#fff;box-shadow:0 7px 18px #b8115940}
+.count{position:absolute;top:-5px;right:-5px;min-width:19px;height:19px;padding:0 4px;border-radius:99px;background:#a90e57;color:#fff;font-size:.68rem;font-weight:900;display:grid;place-items:center;border:2px solid #fff}
+.menu-panel{display:none;position:absolute;right:4%;top:calc(100% - 3px);width:210px;padding:9px;border-radius:19px;background:rgba(255,247,251,.95);box-shadow:0 18px 44px #7d174533}
+.menu-panel.open{display:grid;animation:pop .18s ease-out}
+.menu-panel a,.menu-panel button{padding:12px;border:0;border-radius:12px;background:transparent;text-align:left;text-decoration:none;color:var(--ink)}
+.menu-panel a:hover,.menu-panel button:hover{background:#e0699922}
+main{width:min(1180px,92%);margin:auto}
+.hero{position:relative;isolation:isolate;overflow:hidden;margin:20px auto 34px;padding:clamp(35px,7vw,76px) 20px;text-align:center;border-radius:34px;background:linear-gradient(135deg,rgba(255,255,255,.83),rgba(255,238,247,.53) 55%,rgba(255,255,255,.42))}
+.hero:before,.hero:after{content:"";position:absolute;z-index:-1;border-radius:50%;pointer-events:none;filter:blur(2px)}
+.hero:before{width:290px;height:290px;top:-150px;right:-70px;background:radial-gradient(circle,rgba(255,117,179,.32),transparent 70%)}
+.hero:after{width:260px;height:260px;bottom:-165px;left:-70px;background:radial-gradient(circle,rgba(226,57,132,.2),transparent 70%)}
+.eyebrow{text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;color:#a51b5d;font-weight:900}
+.hero h1{font-size:clamp(2.5rem,8.2vw,6.3rem);line-height:.98;letter-spacing:-.06em;color:#d91f75;margin:14px 0;text-shadow:0 3px 0 #ffffffc9,0 10px 30px #ca196729}
+.hero p{max-width:660px;margin:16px auto 24px;line-height:1.8;color:#735667;font-size:.98rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid #fff;border-radius:15px;padding:12px 17px;text-decoration:none;font-weight:850;transition:transform .2s,box-shadow .2s,filter .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{color:#fff;background:linear-gradient(135deg,#f65fa3,#c91668);box-shadow:0 9px 22px #c51c6c35,inset 0 1px #ffffff9c}
+.btn-soft{color:var(--dark);background:rgba(255,255,255,.82);box-shadow:0 7px 20px #9d1c531b}
+.section-head{text-align:center;margin:42px 0 20px}
+.section-head h2{font-size:clamp(1.65rem,4.5vw,2.5rem);margin:0 0 7px;letter-spacing:-.035em}
+.section-head p{margin:0;color:var(--muted);line-height:1.6}
+.toolbar{padding:14px;border-radius:22px;margin-bottom:17px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center}
+.search-wrap{position:relative;min-width:0}
+.search-wrap span{position:absolute;left:14px;top:50%;transform:translateY(-50%);opacity:.65}
+.search{width:100%;min-height:46px;padding:11px 14px 11px 42px;border-radius:14px;border:1px solid #e8c8d7;background:#ffffffbf;outline:none;color:var(--ink)}
+.search:focus,.sort:focus{border-color:#e83e8c;box-shadow:0 0 0 3px #e83e8c20}
+.sort{min-height:46px;padding:10px 12px;border-radius:14px;border:1px solid #e8c8d7;background:#ffffffcf;color:var(--ink);max-width:100%}
+.filters{display:flex;gap:8px;overflow-x:auto;padding:2px 1px 9px;margin:0 0 12px;scrollbar-width:thin}
+.filter{flex:0 0 auto;border:1px solid #fff;border-radius:99px;padding:9px 14px;background:#ffffff9c;color:#77465e;font-weight:800;font-size:.85rem;box-shadow:0 4px 12px #8f124d0b;transition:.2s}
+.filter.active{background:linear-gradient(135deg,#f65fa3,#c91668);color:#fff;box-shadow:0 7px 17px #c51c6c30}
+.results-line{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:8px 2px 15px;color:var(--muted);font-size:.86rem}
+.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px}
+.product{position:relative;min-width:0;padding:10px;border-radius:25px;overflow:hidden;background:linear-gradient(145deg,#ffffffd9,#ffffff72 55%,#ffe7f2a8);box-shadow:0 16px 38px #89255219,inset 0 1px #fff;transition:transform .25s,box-shadow .25s}
+.product:hover{transform:translateY(-5px);box-shadow:0 23px 45px #8925522b,inset 0 1px #fff}
+.photo-btn{position:relative;display:block;width:100%;padding:0;border:0;background:#f8e7ee;border-radius:18px;overflow:hidden;aspect-ratio:4/4.45}
+.photo-btn img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .45s cubic-bezier(.2,.75,.25,1)}
+.product:hover .photo-btn img{transform:scale(1.035)}
+.photo-fallback{display:none;position:absolute;inset:0;align-items:center;justify-content:center;text-align:center;padding:18px;color:#8a4768;background:linear-gradient(135deg,#fff,#f8dce9)}
+.photo-fallback.show{display:flex}
+.heart{position:absolute;top:9px;right:9px;z-index:2;display:grid;place-items:center;width:38px;height:38px;border:1px solid #fff;border-radius:50%;background:#ffffffdb;color:#a20e54;font-size:1.15rem;box-shadow:0 5px 15px #3b15251a;backdrop-filter:blur(10px)}
+.heart.active{background:#d91f75;color:#fff}
+.zoom-hint{position:absolute;left:9px;bottom:9px;background:#ffffffd9;border:1px solid #fff;padding:6px 9px;border-radius:99px;font-size:.7rem;font-weight:800;box-shadow:0 4px 12px #46142b14}
+.product-info{padding:13px 4px 4px}
+.product-title-row{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.product h3{font-size:1.02rem;line-height:1.3;margin:0 0 5px;color:#4a2638}
+.price{font-weight:950;font-size:1.02rem;color:#a90e57;white-space:nowrap}
+.quality{font-size:.82rem;color:#8c6c7b;margin:0 0 12px;min-height:1.3em}
+.product-actions{display:grid;grid-template-columns:1fr auto;gap:7px}
+.add-cart{min-width:0;display:flex;align-items:center;justify-content:center;gap:6px;padding:11px 8px;border-radius:13px;border:1px solid #fff;background:linear-gradient(135deg,#c6ffdaeb,#84ebaccc);color:#17663c;font-weight:900;font-size:.88rem;box-shadow:0 6px 16px #2f9e5d17,inset 0 1px #fff}
+.details-btn{width:43px;border:1px solid #fff;border-radius:13px;background:#ffffffbf;color:var(--dark);font-weight:900}
+.buy-tiktok{grid-column:1/-1;width:100%;padding:10px 12px;border:1px solid #fff;border-radius:13px;background:linear-gradient(115deg,#ffb8d4,#fff0f6 48%,#b7f4df);color:#71344f;font-weight:900;box-shadow:0 7px 18px #d94d8b20,inset 0 1px #fff;transition:transform .2s,box-shadow .2s}
+.buy-tiktok:hover{transform:translateY(-2px);box-shadow:0 10px 24px #d94d8b35}
+.upcoming{margin:48px 0 30px;padding:clamp(24px,5vw,42px);border-radius:28px;text-align:center}
+.upcoming h2{margin:7px 0;font-size:clamp(1.55rem,4vw,2.3rem)}
+.upcoming p{color:#806474;line-height:1.7}
+.coming-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+.coming-item{border:1px solid #ffffffdf;background:#ffffff75;border-radius:18px;padding:20px 10px;transition:transform .2s}
+.coming-item:hover{transform:translateY(-3px)}
+.coming-item strong{display:block;margin:7px 0 3px}
+.footer{margin-top:28px;padding:30px 16px calc(28px + env(safe-area-inset-bottom));text-align:center;border-radius:28px 28px 0 0;background:linear-gradient(135deg,#ffffffb8,#ffe4f078)}
+.footer h2{color:var(--dark);margin:0 0 8px}.footer p{color:#806474;line-height:1.65}
+.socials{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:18px 0}
+.social{padding:11px 14px;border:1px solid #fff;border-radius:14px;background:#ffffffa8;font-weight:850;color:#6c4256;text-decoration:none}
+.copyright{font-size:.78rem;color:#9a7b8b;margin-top:17px}
+.bottom-cart{display:none;position:fixed;z-index:15;bottom:calc(12px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);width:min(440px,calc(100% - 24px));padding:8px 9px 8px 16px;border-radius:19px;background:#fffdf5ed;border:1px solid #fff;box-shadow:0 12px 35px #68203d32;align-items:center;justify-content:space-between;gap:10px;backdrop-filter:blur(18px)}
+.bottom-cart.visible{display:flex}
+.bottom-cart small{display:block;color:var(--muted);font-size:.75rem}
+.bottom-cart strong{font-size:.98rem}
+.drawer-backdrop,.modal-backdrop{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:16px;background:#361c2a8a;backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px)}
+.drawer-backdrop.open,.modal-backdrop.open{display:flex;animation:fade .18s ease-out}
+.drawer{width:min(560px,100%);max-height:min(86vh,850px);overflow:auto;border-radius:25px;padding:18px;background:linear-gradient(145deg,#fff8fcf7,#fce6f0f5);box-shadow:0 24px 70px #280a1b50}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.drawer-head h2{font-size:1.4rem;margin:0}
+.close-btn{width:40px;height:40px;border:1px solid #fff;border-radius:50%;background:#fff;color:var(--dark);font-size:1.4rem;flex:0 0 auto}
+.cart-row{display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:11px;align-items:center;padding:11px 0;border-bottom:1px solid #e9cad8}
+.cart-row img{width:72px;height:78px;object-fit:cover;border-radius:13px;background:#f7e3ec}
+.cart-row h3{font-size:.94rem;margin:0 0 4px}
+.cart-row p{font-size:.85rem;color:var(--muted);margin:0}
+.qty{display:flex;align-items:center;gap:8px;margin-top:8px}
+.qty button{width:28px;height:28px;border:1px solid #e7bfd1;border-radius:9px;background:#fff;color:var(--dark);font-weight:900}
+.remove{border:0;background:transparent;color:#b21c5f;font-size:.8rem;text-decoration:underline;padding:5px 0}
+.cart-summary{padding-top:15px;display:grid;gap:12px}
+.summary-line{display:flex;justify-content:space-between;gap:12px;font-weight:900}
+.note{font-size:.82rem;line-height:1.6;color:#876579}
+.empty{text-align:center;padding:28px 12px;color:var(--muted)}
+.modal-content{width:min(760px,100%);max-height:90vh;overflow:auto;border-radius:25px;padding:14px;background:linear-gradient(145deg,#fff8fcf7,#fce6f0f5);box-shadow:0 24px 70px #280a1b50}
+.detail-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}
+.detail-image-wrap{position:relative}
+.detail-image{width:100%;aspect-ratio:4/4.7;object-fit:cover;display:block;border-radius:18px;background:#f8e7ee}
+.gallery-controls{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:8px}
+.gallery-controls button{border:1px solid #fff;background:#ffffffc9;border-radius:12px;padding:9px 12px;color:var(--dark);font-weight:850}
+.detail-copy{padding:8px 3px}
+.detail-copy h2{font-size:clamp(1.5rem,4vw,2.1rem);margin:8px 0}
+.detail-price{font-size:1.4rem;color:var(--dark);font-weight:950}
+.detail-copy p{line-height:1.7;color:#806474}
+.detail-bullets{padding-left:19px;color:#806474;line-height:1.8;font-size:.9rem}
+.toast{position:fixed;z-index:100;bottom:calc(25px + env(safe-area-inset-bottom));left:50%;transform:translate(-50%,15px);opacity:0;pointer-events:none;padding:12px 17px;border:1px solid #fff;border-radius:14px;background:#4b2039;color:#fff;box-shadow:0 10px 30px #2b102440;font-size:.88rem;font-weight:800;transition:opacity .2s,transform .2s;max-width:calc(100% - 28px);text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.no-results{grid-column:1/-1;padding:35px 15px;text-align:center;border:1px dashed #d9a5bc;border-radius:20px;color:var(--muted);background:#ffffff75}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes pop{from{opacity:0;transform:translateY(-5px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:850px){.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.toolbar{grid-template-columns:1fr auto}.product:hover{transform:translateY(-2px)}}
+@media(max-width:520px){
+ main{width:93%}.topbar{padding-left:3.5%;padding-right:3.5%}.nav{padding:8px;border-radius:17px}.brand{font-size:.79rem;gap:6px}.brand-mark{width:29px;height:29px}.nav-actions{gap:5px}.icon-btn,.menu-btn{min-width:38px;height:38px;border-radius:12px}
+ .hero{margin-top:14px;border-radius:25px;padding:35px 17px}.hero h1{font-size:clamp(2.25rem,10vw,3.5rem)}.hero p{font-size:.91rem}
+ .section-head{margin-top:33px}.toolbar{padding:10px;gap:8px}.search{font-size:.9rem;min-height:43px}.sort{font-size:.8rem;max-width:116px;min-height:43px;padding:8px}
+ .products{gap:10px}.product{padding:7px;border-radius:19px}.photo-btn{border-radius:14px;aspect-ratio:3/3.65}.heart{width:32px;height:32px;top:6px;right:6px;font-size:1rem}.zoom-hint{font-size:.62rem;left:5px;bottom:5px;padding:5px 7px}.product-info{padding:10px 2px 3px}.product h3{font-size:.91rem}.price{font-size:.93rem}.quality{font-size:.73rem;margin-bottom:10px}.product-actions{grid-template-columns:minmax(0,1fr) 35px;gap:5px}.add-cart{font-size:.77rem;padding:10px 4px}.details-btn{width:35px;border-radius:11px}
+ .coming-grid{grid-template-columns:1fr}.upcoming{margin-top:35px}.detail-grid{grid-template-columns:1fr;gap:10px}.detail-image{aspect-ratio:4/3.6;max-height:340px}.detail-copy{padding:0 3px}.modal-content{padding:10px}.drawer{padding:14px}.cart-row{grid-template-columns:60px minmax(0,1fr) auto;gap:8px}.cart-row img{width:60px;height:67px}
+ .bottom-cart.visible{display:flex}.footer{padding-bottom:calc(90px + env(safe-area-inset-bottom))}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="country-strip" aria-label="About this website">🇧🇩 <strong>Bangladesh-based boutique</strong> · Marina World · Designed with love in Bangladesh</div>
+  <nav class="nav glass" aria-label="Main navigation">
+    <a class="brand" href="#home"><span class="brand-mark">♕</span><span>MARINA WORLD</span></a>
+    <div class="nav-actions">
+      <button class="icon-btn language-btn" id="languageToggle" aria-label="Switch language" title="বাংলা / English">EN / বাংলা</button>
+      <button class="icon-btn" id="wishlistOpen" aria-label="Open wishlist" title="Wishlist">♡<span class="count" id="wishCount">0</span></button>
+      <button class="icon-btn" id="cartOpen" aria-label="Open shopping cart" title="Shopping cart">🛍<span class="count" id="cartCount">0</span></button>
+      <button class="menu-btn" id="menuToggle" aria-label="Open menu" aria-expanded="false"><span aria-hidden="true">☰</span></button>
+    </div>
+    <div class="menu-panel glass" id="menuPanel">
+      <a href="#home">⌂ Home</a><a href="#bags">👜 Bag Collection</a>
+      <button id="menuWishlist">♡ My Wishlist</button><button id="menuCart">🛍 My Cart</button>
+      <a href="#footer">✉ Contact & Socials</a>
+    </div>
+  </nav>
+</header>
+<main>
+  <section class="hero glass" id="home">
+    <div class="eyebrow" id="heroEyebrow">A little luxury for every day ✨</div>
+    <h1>MARINA WORLD</h1>
+    <p id="heroDescription">Find a bag that matches your mood, your style, and your beautiful everyday moments. Elegant details, lovely colors, and a little sparkle just for you. 👜🌷</p>
+    <a class="btn btn-soft" id="exploreBtn" href="#bags">Explore the collection ↓</a>
+  </section>
+
+  <section id="bags">
+    <div class="section-head"><h2 id="collectionTitle">👜 Our Bag Collection</h2><p id="collectionSubtitle">Choose your favorite color and find your everyday style 💗</p></div>
+    <div class="feature-strip glass" style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;padding:10px;border-radius:16px;margin:-4px 0 15px"><span class="tag-pill new" id="newArrivalLabel">✨ New arrivals</span><span class="tag-pill sale" id="dealLabel">🏷️ Special offers</span><span class="stock-pill" id="stockNote">Check availability on TikTok</span></div>
+    <div class="toolbar glass">
+      <label class="search-wrap"><span aria-hidden="true">⌕</span><input class="search" id="searchInput" type="search" placeholder="Search bags by color or name…" aria-label="Search bags"></label>
+      <select class="sort" id="sortSelect" aria-label="Sort products"><option value="featured">Featured</option><option value="price-low">Price: low to high</option><option value="name">Name: A–Z</option></select>
+    </div>
+    <div class="filters" id="filters" aria-label="Filter bags by color">
+      <button class="filter active" data-color="All">✨ All bags</button><button class="filter" data-color="Red">❤️ Red</button><button class="filter" data-color="Gray">🩶 Gray</button><button class="filter" data-color="Cream">🤍 Cream</button><button class="filter" data-color="White">🤍 White</button><button class="filter" data-color="Pink">🎀 Pink</button><button class="filter" data-color="Black">🖤 Black</button>
+    </div>
+    <div class="results-line"><span id="resultCount">6 lovely bags</span><span id="saveHint">♡ Save your favorites</span></div><p class="price-note" id="priceNote">BDT amounts are approximate conversions (৳122 = $1); confirm the final price with the seller.</p>
+    <div class="products" id="products"></div>
+  </section>
+
+  <section class="upcoming glass" id="newArrivals">
+    <div class="eyebrow" id="upcomingEyebrow">Coming soon</div><h2 id="upcomingTitle">✨ More Beautiful Things Are on the Way ✨</h2>
+    <p id="upcomingText">We’re getting ready to add more lovely styles to Marina World. Keep an eye out! 💝</p>
+    <div class="coming-grid"><div class="coming-item">🌸<strong>New Colors</strong><small>Coming soon</small></div><div class="coming-item">👜<strong>New Styles</strong><small>Coming soon</small></div><div class="coming-item">🎁<strong>Lovely Surprises</strong><small>Coming soon</small></div></div>
+  </section>
+</main>
+<footer class="footer glass" id="footer">
+  <h2>MARINA WORLD ♡</h2><p id="footerText">Thank you for visiting our little collection. Stay lovely! 🌷</p>
+  <div class="socials"><a class="social" href="https://www.tiktok.com/@marinas_collection011?_r=1&_t=ZS-9AWejZNy5hQ" target="_blank" rel="noopener noreferrer">♪ TikTok</a><button class="social" data-social="Instagram">◎ Instagram</button><button class="social" data-social="Facebook">f Facebook</button><button class="social" data-social="YouTube">▶ YouTube</button></div>
+  <div class="copyright">© <span id="year"></span> Marina World. Made with 💗</div>
+</footer>
+
+<div class="bottom-cart glass" id="bottomCart"><div><small id="bottomCartItems">Your bag is waiting</small><strong id="bottomCartTotal">$0.00</strong></div><button class="btn btn-primary" id="bottomCartOpen">View cart →</button></div>
+
+<div class="drawer-backdrop" id="cartBackdrop" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+  <section class="drawer glass"><div class="drawer-head"><h2 id="cartTitle">🛍 Your Shopping Cart</h2><button class="close-btn" data-close="cartBackdrop" aria-label="Close cart">×</button></div>
+    <div id="cartItems"></div><div class="cart-summary" id="cartSummary"></div>
+  </section>
+</div>
+<div class="drawer-backdrop" id="wishlistBackdrop" role="dialog" aria-modal="true" aria-labelledby="wishlistTitle">
+  <section class="drawer glass"><div class="drawer-head"><h2 id="wishlistTitle">♡ Your Wishlist</h2><button class="close-btn" data-close="wishlistBackdrop" aria-label="Close wishlist">×</button></div><div id="wishlistItems"></div></section>
+</div>
+<div class="modal-backdrop" id="detailBackdrop" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+  <section class="modal-content glass"><div class="drawer-head"><span class="eyebrow">MARINA COLLECTION</span><button class="close-btn" data-close="detailBackdrop" aria-label="Close product details">×</button></div>
+    <div class="detail-grid"><div class="detail-image-wrap"><img class="detail-image" id="detailImage" src="" alt=""><div class="gallery-controls"><button id="prevProduct" aria-label="Previous bag">← Previous</button><span id="galleryIndex" class="note">1 / 6</span><button id="nextProduct" aria-label="Next bag">Next →</button></div></div>
+      <div class="detail-copy"><div class="eyebrow" id="detailColor">COLOR</div><h2 id="detailTitle">Bag name</h2><div class="detail-price" id="detailPrice">৳609 · $4.99</div><p id="detailDescription">A lovely handbag for everyday style.</p><ul class="detail-bullets"><li><span id="detailColorLabel">Color</span>: <strong id="detailColorText"></strong></li><li id="detailPhotoNote">Photo shown is from the current collection.</li><li id="detailStockNote">Ask the seller to confirm stock, dimensions, and delivery before ordering.</li></ul><div class="review-box"><strong id="reviewHeading">⭐ Customer reviews</strong><p id="reviewCopy">No customer reviews have been published yet. We won’t show made-up ratings.</p><button class="review-btn" id="reviewAsk">Ask about this bag on TikTok ↗</button></div><button class="btn btn-primary" id="detailAdd" style="width:100%;margin-top:12px">＋ Add to cart</button><button class="btn btn-soft" id="detailBuy" style="width:100%;margin-top:9px">View details & buy on TikTok ↗</button><button class="btn btn-soft" id="detailWish" style="width:100%;margin-top:9px">♡ Save to wishlist</button></div>
+    </div>
+  </section>
+</div>
+<div class="drawer-backdrop" id="messageBackdrop" role="dialog" aria-modal="true" aria-labelledby="messageTitle">
+  <section class="drawer glass" style="max-width:390px;text-align:center"><div class="drawer-head"><span></span><button class="close-btn" data-close="messageBackdrop" aria-label="Close message">×</button></div><h2 id="messageTitle">Coming soon 💗</h2><p id="messageText" class="note">Follow us for updates.</p><button class="btn btn-primary" data-close="messageBackdrop">Okay</button></section>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+  "use strict";
+  const TIKTOK = "https://www.tiktok.com/@marinas_collection011?_r=1&_t=ZS-9AWejZNy5hQ";
+  // Keep these filenames in the same folder as index.html (case-sensitive on GitHub Pages).
+  // Edit each product here: stock can be "available", "sold", or "check"; discount is a percent (0–100).
+  // Update isNew when a product is genuinely a new arrival. Prices below are in USD.
+  const products = [
+    {id:"red",name:"Red Bag",color:"Red",emoji:"❤️",price:4.99,image:"red-bag.webp",description:"A bold red handbag with elegant gold-tone and pearl-style details.",stock:"check",isNew:true,discount:0,reviewCount:0},
+    {id:"gray",name:"Gray Bag",color:"Gray",emoji:"🩶",price:4.99,image:"gray-bag.webp",description:"A soft gray handbag that pairs beautifully with everyday outfits.",stock:"check",isNew:true,discount:0,reviewCount:0},
+    {id:"cream",name:"Cream Bag",color:"Cream",emoji:"🤍",price:4.99,image:"cream-bag.webp",description:"A warm cream-colored handbag with delicate decorative details.",stock:"check",isNew:false,discount:0,reviewCount:0},
+    {id:"white",name:"White Bag",color:"White",emoji:"🤍",price:4.99,image:"white-bag.webp",description:"A classic white handbag for a clean, elegant look.",stock:"check",isNew:false,discount:0,reviewCount:0},
+    {id:"pink",name:"Pink Bag",color:"Pink",emoji:"🎀",price:4.99,image:"pink-bag.webp",description:"A sweet pink handbag with a soft, feminine style.",stock:"check",isNew:false,discount:0,reviewCount:0},
+    {id:"black",name:"Black Bag",color:"Black",emoji:"🖤",price:4.99,image:"black-bag.webp",description:"A timeless black handbag that works from day to evening.",stock:"check",isNew:false,discount:0,reviewCount:0}
+  ];
+  const $ = id => document.getElementById(id);
+  const USD_TO_BDT = 122; // Display-only estimate; update if you want a different exchange rate.
+  let language = "en";
+  const money = n => `৳${Math.round(Number(n)*USD_TO_BDT).toLocaleString("en-BD")} · $${Number(n).toFixed(2)}`;
+  const tr = (en,bn) => language === "bn" ? bn : en;
+  const readStore = (key, fallback) => { try { const v=JSON.parse(localStorage.getItem(key)); return v ?? fallback; } catch { return fallback; } };
+  let cart = readStore("marinaCartV2", {});
+  let wishlist = readStore("marinaWishlistV2", []);
+  let activeColor = "All";
+  let detailId = "red";
+  let toastTimer;
+
+  const escapeHtml = value => String(value).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const getProduct = id => products.find(p => p.id === id);
+  const save = () => { try { localStorage.setItem("marinaCartV2", JSON.stringify(cart)); localStorage.setItem("marinaWishlistV2", JSON.stringify(wishlist)); } catch {} };
+  const toast = msg => { $("toast").textContent=msg; $("toast").classList.add("show"); clearTimeout(toastTimer); toastTimer=setTimeout(()=>$("toast").classList.remove("show"),2300); };
+  const totalItems = () => Object.values(cart).reduce((sum,n)=>sum+Number(n||0),0);
+  const totalPrice = () => products.reduce((sum,p)=>sum+p.price*(1-p.discount/100)*(Number(cart[p.id])||0),0);
+
+  function renderProducts(){
+    const query=$("searchInput").value.trim().toLowerCase();
+    let list=products.filter(p=>(activeColor==="All"||p.color===activeColor) && (p.name.toLowerCase().includes(query)||p.color.toLowerCase().includes(query)));
+    if($("sortSelect").value==="price-low") list.sort((a,b)=>a.price-b.price);
+    if($("sortSelect").value==="name") list.sort((a,b)=>a.name.localeCompare(b.name));
+    $("resultCount").textContent=`${list.length} ${list.length===1?"lovely bag":"lovely bags"}`;
+    $("products").innerHTML=list.length?list.map(p=>`
+      <article class="product glass">
+        <div class="photo-btn" role="button" tabindex="0" data-detail="${p.id}" aria-label="View details for ${p.name}">
+          <img src="${p.image}" alt="${escapeHtml(p.name)} handbag" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')">
+          <span class="photo-fallback">👜<br><strong>${escapeHtml(p.name)}</strong><br><small>Check the image filename in your repository</small></span>
+          <button class="heart ${wishlist.includes(p.id)?"active":""}" data-wish="${p.id}" aria-label="${wishlist.includes(p.id)?"Remove":"Add"} ${p.name} ${wishlist.includes(p.id)?"from":"to"} wishlist">${wishlist.includes(p.id)?"♥":"♡"}</button>
+          <span class="zoom-hint">⌕ View details</span>
+        </div>
+        <div class="product-info"><div class="tag-row">${p.isNew?`<span class="tag-pill new">✨ ${tr("New arrival","নতুন এসেছে")}</span>`:""}${p.discount>0?`<span class="tag-pill sale">-${p.discount}% ${tr("OFF","ছাড়")}</span>`:""}<span class="stock-pill ${p.stock==='available'?'available':p.stock==='sold'?'sold':''}">${p.stock==='available'?tr("● In stock","● স্টকে আছে"):p.stock==='sold'?tr("● Sold out","● স্টক শেষ"):tr("● Check stock","● স্টক জেনে নিন")}</span></div><div class="product-title-row"><h3>${escapeHtml(tr(p.name,({Red:"লাল ব্যাগ",Gray:"ধূসর ব্যাগ",Cream:"ক্রিম ব্যাগ",White:"সাদা ব্যাগ",Pink:"গোলাপি ব্যাগ",Black:"কালো ব্যাগ"})[p.color]))} ${p.emoji}</h3><span class="price"><span class="price-now">${money(p.price*(1-p.discount/100))}</span>${p.discount>0?`<span class="price-old">${money(p.price)}</span>`:""}</span></div>
+          <p class="quality">✨ ${tr("Marina Collection","মারিনা কালেকশন")} · ${tr("No reviews yet","এখনও রিভিউ নেই")}</p>
+          <div class="product-actions"><button class="add-cart" data-add="${p.id}">＋ ${tr("Add to cart","কার্টে যোগ")}</button><button class="details-btn" data-detail="${p.id}" aria-label="More details about ${p.name}">↗</button><button class="buy-tiktok" data-buy="${p.id}">${tr("View details & buy on TikTok","বিস্তারিত দেখুন ও TikTok-এ কিনুন")} ↗</button></div>
+        </div>
+      </article>`).join(""):`<div class="no-results">No bags found 💗<br><small>Try another name or color.</small></div>`;
+  }
+  function updateCounts(){
+    $("cartCount").textContent=totalItems(); $("wishCount").textContent=wishlist.length;
+    $("bottomCartItems").textContent=totalItems()?`${totalItems()} item${totalItems()===1?"":"s"} in your cart`:"Your bag is waiting";
+    $("bottomCartTotal").textContent=money(totalPrice());
+    $("bottomCart").classList.toggle("visible",totalItems()>0);
+  }
+  function addCart(id){
+    if(!getProduct(id)) return;
+    if(getProduct(id).stock === "sold"){toast(tr("This bag is marked sold out","এই ব্যাগটি স্টক শেষ হিসেবে চিহ্নিত"));return;}
+    cart[id]=(Number(cart[id])||0)+1; save(); updateCounts(); renderCart(); toast(`${getProduct(id).name} added to cart 💗`);
+  }
+  function toggleWish(id){
+    wishlist=wishlist.includes(id)?wishlist.filter(x=>x!==id):[...wishlist,id];
+    save(); renderProducts(); updateCounts(); renderWishlist();
+    if(id===detailId && $("detailBackdrop").classList.contains("open")) $("detailWish").textContent=wishlist.includes(id)?tr("♥ Saved to wishlist","♥ পছন্দের তালিকায় সংরক্ষিত"):tr("♡ Save to wishlist","♡ পছন্দের তালিকায় রাখুন");
+    toast(wishlist.includes(id)?tr("Saved to your wishlist ♡","পছন্দের তালিকায় রাখা হয়েছে ♡"):tr("Removed from wishlist","পছন্দের তালিকা থেকে সরানো হয়েছে"));
+  }
+  function renderCart(){
+    const entries=products.filter(p=>(Number(cart[p.id])||0)>0);
+    $("cartItems").innerHTML=entries.length?entries.map(p=>`
+      <div class="cart-row"><img src="${p.image}" alt="${escapeHtml(p.name)}" onerror="this.style.opacity='.2'">
+        <div><h3>${escapeHtml(p.name)}</h3><p>${money(p.price*(1-p.discount/100))} each</p><div class="qty"><button data-qty="-1" data-id="${p.id}" aria-label="Decrease ${p.name} quantity">−</button><strong>${Number(cart[p.id])}</strong><button data-qty="1" data-id="${p.id}" aria-label="Increase ${p.name} quantity">+</button></div></div>
+        <div style="text-align:right"><strong>${money(p.price*(1-p.discount/100)*Number(cart[p.id]))}</strong><br><button class="remove" data-remove="${p.id}">Remove</button></div>
+      </div>`).join(""):`<div class="empty">Your cart is empty 🛍<br><small>Find a bag you love and add it here.</small><br><button class="btn btn-soft" style="margin-top:15px" data-close="cartBackdrop">Explore bags</button></div>`;
+    $("cartSummary").innerHTML=entries.length?`<div class="summary-line"><span>Subtotal</span><span>${money(totalPrice())}</span></div><p class="note">Delivery charges, availability, and final price must be confirmed with the seller. Buy/checkout opens the Marina Collection TikTok profile; this demo does not process payments.</p><button class="btn btn-primary" id="checkoutBtn" style="width:100%">Prepare order ↗</button><button class="btn btn-soft" id="clearCart" style="width:100%">Clear cart</button>`:"";
+  }
+  function renderWishlist(){
+    const entries=products.filter(p=>wishlist.includes(p.id));
+    $("wishlistItems").innerHTML=entries.length?entries.map(p=>`
+      <div class="cart-row"><img src="${p.image}" alt="${escapeHtml(p.name)}" onerror="this.style.opacity='.2'"><div><h3>${escapeHtml(p.name)}</h3><p>${money(p.price)}</p><button class="remove" data-detail="${p.id}">View details</button></div><div><button class="btn btn-soft" data-add="${p.id}">＋ Add</button><br><button class="remove" data-wish="${p.id}">Remove ♡</button></div></div>`).join(""):`<div class="empty">Your wishlist is empty ♡<br><small>Tap a heart on any bag to save it here.</small></div>`;
+  }
+  function openLayer(id){$(id).classList.add("open");document.body.style.overflow="hidden";}
+  function closeLayer(id){$(id).classList.remove("open");if(!document.querySelector(".drawer-backdrop.open,.modal-backdrop.open"))document.body.style.overflow="";}
+  function openDetails(id){
+    const p=getProduct(id); if(!p)return; detailId=id;
+    $("detailImage").src=p.image;$("detailImage").alt=p.name;
+    $("detailColor").textContent=p.color.toUpperCase()+" BAG";$("detailTitle").textContent=tr(p.name,({Red:"লাল ব্যাগ",Gray:"ধূসর ব্যাগ",Cream:"ক্রিম ব্যাগ",White:"সাদা ব্যাগ",Pink:"গোলাপি ব্যাগ",Black:"কালো ব্যাগ"})[p.color]);$("detailPrice").textContent=money(p.price*(1-p.discount/100));
+    $("detailDescription").textContent=p.description;$("detailColorText").textContent=tr(p.color,({Red:"লাল",Gray:"ধূসর",Cream:"ক্রিম",White:"সাদা",Pink:"গোলাপি",Black:"কালো"})[p.color]);
+    $("detailStockNote").textContent=p.stock==="available"?tr("Marked in stock. Confirm before ordering.","স্টকে আছে হিসেবে চিহ্নিত। অর্ডারের আগে নিশ্চিত করুন।"):p.stock==="sold"?tr("Marked sold out. Please ask about restock.","স্টক শেষ হিসেবে চিহ্নিত। আবার আসবে কি না জেনে নিন।"):tr("Please confirm stock, dimensions, delivery, and final price with the seller.","স্টক, মাপ, ডেলিভারি ও চূড়ান্ত দাম বিক্রেতার কাছ থেকে নিশ্চিত করুন।");
+    $("reviewCopy").textContent=tr("No customer reviews have been published yet. We won’t show made-up ratings.","এখনও কোনো গ্রাহক রিভিউ প্রকাশ করা হয়নি। আমরা বানানো রেটিং দেখাব না।");
+    $("reviewAsk").textContent=tr("Ask about this bag on TikTok ↗","TikTok-এ এই ব্যাগ সম্পর্কে জিজ্ঞেস করুন ↗");
+    $("detailAdd").textContent=tr("＋ Add to cart","＋ কার্টে যোগ করুন");$("detailBuy").textContent=tr("View details & buy on TikTok ↗","বিস্তারিত দেখুন ও TikTok-এ কিনুন ↗");
+    $("galleryIndex").textContent=`${products.findIndex(x=>x.id===id)+1} / ${products.length}`;
+    $("detailWish").textContent=wishlist.includes(id)?"♥ Saved to wishlist":"♡ Save to wishlist";
+    openLayer("detailBackdrop");
+  }
+  function stepDetail(dir){
+    let i=products.findIndex(p=>p.id===detailId);i=(i+dir+products.length)%products.length;openDetails(products[i].id);
+  }
+  function orderText(){
+    const lines=products.filter(p=>(Number(cart[p.id])||0)>0).map(p=>`${p.name} x${cart[p.id]} — ${money(p.price*(1-p.discount/100)*Number(cart[p.id]))}`);
+    return `Hello Marina's Collection! I'd like to order:\n${lines.join("\n")}\nSubtotal: ${money(totalPrice())}\nPlease confirm availability, delivery charge, and final total.`;
+  }
+  function openTikTok(productId){
+    const p=getProduct(productId);
+    if(p){try{const msg=`Hello Marina’s Collection! I want to buy the ${p.name} (${money(p.price*(1-p.discount/100))}). Is it available? Please confirm delivery charge and final price.`; if(navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(msg).catch(()=>{});}catch{}}
+    window.open(TIKTOK,"_blank","noopener,noreferrer");
+  }
+  async function prepareOrder(){
+    if(!totalItems()){toast(tr("Add a bag to your cart first","আগে কার্টে একটি ব্যাগ যোগ করুন"));return;}
+    const message=orderText();
+    // Open TikTok synchronously from the click so mobile browsers are less likely to block it.
+    window.open(TIKTOK,"_blank","noopener,noreferrer");
+    try{
+      if(navigator.clipboard && window.isSecureContext){await navigator.clipboard.writeText(message);toast("Order summary copied! Paste it in TikTok messages if available.");}
+      else {window.prompt("Copy this order summary, then contact Marina's Collection on TikTok:",message);}
+    }catch{window.prompt("Copy your order summary:",message);}
+  }
+
+  $("filters").addEventListener("click",e=>{const b=e.target.closest("[data-color]");if(!b)return;activeColor=b.dataset.color;document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x===b));renderProducts();});
+  $("searchInput").addEventListener("input",renderProducts);$("sortSelect").addEventListener("change",renderProducts);
+  $("products").addEventListener("click",e=>{
+    const wish=e.target.closest("[data-wish]");if(wish){e.stopPropagation();toggleWish(wish.dataset.wish);return;}
+    const add=e.target.closest("[data-add]");if(add){e.stopPropagation();addCart(add.dataset.add);return;}
+    const buy=e.target.closest("[data-buy]");if(buy){e.stopPropagation();openDetails(buy.dataset.buy);return;}
+    const detail=e.target.closest("[data-detail]");if(detail)openDetails(detail.dataset.detail);
+  });
+  $("products").addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.matches("[data-detail]")){e.preventDefault();openDetails(e.target.dataset.detail);}});
+  $("cartItems").addEventListener("click",e=>{
+    const qty=e.target.closest("[data-qty]");if(qty){const id=qty.dataset.id;cart[id]=Math.max(0,(Number(cart[id])||0)+Number(qty.dataset.qty));if(!cart[id])delete cart[id];save();renderCart();updateCounts();return;}
+    const rem=e.target.closest("[data-remove]");if(rem){delete cart[rem.dataset.remove];save();renderCart();updateCounts();return;}
+    if(e.target.closest("#checkoutBtn"))prepareOrder();
+    if(e.target.closest("#clearCart")){cart={};save();renderCart();updateCounts();toast("Cart cleared");}
+    if(e.target.closest("[data-close]"))closeLayer("cartBackdrop");
+  });
+  $("wishlistItems").addEventListener("click",e=>{
+    const wish=e.target.closest("[data-wish]");if(wish){toggleWish(wish.dataset.wish);return;}
+    const add=e.target.closest("[data-add]");if(add){addCart(add.dataset.add);return;}
+    const detail=e.target.closest("[data-detail]");if(detail)openDetails(detail.dataset.detail);
+  });
+  $("cartOpen").addEventListener("click",()=>{renderCart();openLayer("cartBackdrop")});
+  $("bottomCartOpen").addEventListener("click",()=>{renderCart();openLayer("cartBackdrop")});
+  $("wishlistOpen").addEventListener("click",()=>{renderWishlist();openLayer("wishlistBackdrop")});
+  $("menuWishlist").addEventListener("click",()=>{closeMenu();renderWishlist();openLayer("wishlistBackdrop")});
+  $("menuCart").addEventListener("click",()=>{closeMenu();renderCart();openLayer("cartBackdrop")});
+  $("detailAdd").addEventListener("click",()=>addCart(detailId));
+  $("detailBuy").addEventListener("click",()=>openTikTok(detailId));
+  $("detailWish").addEventListener("click",()=>toggleWish(detailId));
+  $("reviewAsk").addEventListener("click",()=>openTikTok(detailId));
+  $("prevProduct").addEventListener("click",()=>stepDetail(-1));$("nextProduct").addEventListener("click",()=>stepDetail(1));
+  document.querySelectorAll("[data-close]").forEach(b=>b.addEventListener("click",()=>closeLayer(b.dataset.close)));
+  document.querySelectorAll(".drawer-backdrop,.modal-backdrop").forEach(layer=>layer.addEventListener("click",e=>{if(e.target===layer)closeLayer(layer.id)}));
+  document.addEventListener("keydown",e=>{if(e.key==="Escape"){document.querySelectorAll(".drawer-backdrop.open,.modal-backdrop.open").forEach(x=>closeLayer(x.id));closeMenu();}if(e.key==="ArrowLeft"&&$("detailBackdrop").classList.contains("open"))stepDetail(-1);if(e.key==="ArrowRight"&&$("detailBackdrop").classList.contains("open"))stepDetail(1);});
+  const toggle=$("menuToggle"),panel=$("menuPanel");
+  function closeMenu(){panel.classList.remove("open");toggle.setAttribute("aria-expanded","false");}
+  toggle.addEventListener("click",()=>{const open=panel.classList.toggle("open");toggle.setAttribute("aria-expanded",String(open));});
+  panel.querySelectorAll("a").forEach(a=>a.addEventListener("click",closeMenu));
+  document.addEventListener("click",e=>{if(!panel.contains(e.target)&&!toggle.contains(e.target))closeMenu();});
+  document.querySelectorAll("[data-social]").forEach(b=>b.addEventListener("click",()=>{$("messageTitle").textContent=`${b.dataset.social} 💗`;$("messageText").textContent=`Add Marina World's real ${b.dataset.social} profile link in index.html when it is ready.`;openLayer("messageBackdrop")}));
+  const languageStrings = {
+    en:{heroEyebrow:"A little luxury for every day ✨",heroDescription:"Find a bag that matches your mood, your style, and your beautiful everyday moments. Elegant details, lovely colors, and a little sparkle just for you. 👜🌷",explore:"Explore the collection ↓",collectionTitle:"👜 Our Bag Collection",collectionSubtitle:"Choose your favorite color and find your everyday style 💗",newArrival:"✨ New arrivals",deals:"🏷️ Special offers",stock:"Check availability on TikTok",upcomingEyebrow:"Coming soon",upcomingTitle:"✨ More Beautiful Things Are on the Way ✨",upcomingText:"We’re getting ready to add more lovely styles to Marina World. Keep an eye out! 💝",footerText:"Thank you for visiting our little collection. Stay lovely! 🌷",search:"Search bags by color or name…",priceNote:"BDT amounts are approximate conversions (৳122 = $1); confirm the final price with the seller.",saveHint:"♡ Save your favorites",all:"✨ All bags",home:"⌂ Home",bags:"👜 Bag Collection",wishlist:"♡ My Wishlist",cart:"🛍 My Cart",contact:"✉ Contact & Socials"},
+    bn:{heroEyebrow:"প্রতিদিনের জন্য একটু বিলাসিতা ✨",heroDescription:"আপনার পছন্দের রং ও স্টাইলের সঙ্গে মানানসই ব্যাগ খুঁজে নিন। মার্জিত ডিজাইন আর সুন্দর রঙে আপনার প্রতিদিন হোক আরও বিশেষ। 👜🌷",explore:"কালেকশন দেখুন ↓",collectionTitle:"👜 আমাদের ব্যাগ কালেকশন",collectionSubtitle:"আপনার পছন্দের রং বেছে নিন 💗",newArrival:"✨ নতুন কালেকশন",deals:"🏷️ বিশেষ অফার",stock:"TikTok-এ স্টক নিশ্চিত করুন",upcomingEyebrow:"শিগগিরই আসছে",upcomingTitle:"✨ আরও সুন্দর পণ্য আসছে ✨",upcomingText:"Marina World-এ আরও সুন্দর ডিজাইন যোগ করার প্রস্তুতি চলছে। চোখ রাখুন! 💝",footerText:"আমাদের কালেকশন দেখার জন্য ধন্যবাদ। সুন্দর থাকুন! 🌷",search:"রং বা নাম দিয়ে ব্যাগ খুঁজুন…",priceNote:"টাকার মূল্য আনুমানিক (৳১২২ = $১); চূড়ান্ত দাম বিক্রেতার কাছ থেকে নিশ্চিত করুন।",saveHint:"♡ পছন্দের ব্যাগ সেভ করুন",all:"✨ সব ব্যাগ",home:"⌂ হোম",bags:"👜 ব্যাগ কালেকশন",wishlist:"♡ পছন্দের তালিকা",cart:"🛍 কার্ট",contact:"✉ যোগাযোগ ও সোশ্যাল"}
+  };
+  function applyLanguage(){
+    const t=languageStrings[language];document.documentElement.lang=language==="bn"?"bn":"en";
+    ["heroEyebrow","heroDescription","collectionTitle","collectionSubtitle","upcomingEyebrow","upcomingTitle","upcomingText","footerText"].forEach(id=>$(id).textContent=t[id]);
+    $("exploreBtn").textContent=t.explore;$("priceNote").textContent=t.priceNote;$("saveHint").textContent=t.saveHint;$("newArrivalLabel").textContent=t.newArrival;$("dealLabel").textContent=t.deals;$("stockNote").textContent=t.stock;$("searchInput").placeholder=t.search;
+    const colorNames=language==="bn"?["✨ সব ব্যাগ","❤️ লাল","🩶 ধূসর","🤍 ক্রিম","🤍 সাদা","🎀 গোলাপি","🖤 কালো"]:["✨ All bags","❤️ Red","🩶 Gray","🤍 Cream","🤍 White","🎀 Pink","🖤 Black"];
+    document.querySelectorAll("#filters [data-color]").forEach((b,i)=>b.textContent=colorNames[i]||b.textContent);
+    const menuLinks=$("menuPanel").querySelectorAll("a");if(menuLinks[0])menuLinks[0].textContent=t.home;if(menuLinks[1])menuLinks[1].textContent=t.bags;if(menuLinks[2])menuLinks[2].textContent=t.contact;
+    $("menuWishlist").textContent=t.wishlist;$("menuCart").textContent=t.cart;$("languageToggle").textContent=language==="en"?"বাংলা":"English";
+    $("sortSelect").options[0].text=language==="bn"?"প্রস্তাবিত":"Featured";$("sortSelect").options[1].text=language==="bn"?"দাম: কম থেকে বেশি":"Price: low to high";$("sortSelect").options[2].text=language==="bn"?"নাম: A–Z":"Name: A–Z";
+    renderProducts();renderCart();renderWishlist();
+  }
+  $("languageToggle").addEventListener("click",()=>{language=language==="en"?"bn":"en";applyLanguage();toast(language==="bn"?"বাংলা ভাষা চালু হয়েছে 🇧🇩":"English language enabled");});
+  $("year").textContent=new Date().getFullYear();
+  renderProducts();renderCart();renderWishlist();updateCounts();
+})();
+</script>
+</body>
+</html>
